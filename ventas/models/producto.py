@@ -1,8 +1,8 @@
-from oddo import fields, models
+from odoo import fields, models
 
 class Producto(models.Model):
 
-    __name = 'ventas.producto'
+    _name = 'ventas.producto'
 
     name = fields.Char(string="Nombre")
     precio = fields.Float(string="Precio")

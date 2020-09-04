@@ -2,7 +2,7 @@ from odoo import fields, models
 
 class Vendedor(models.Model):
 
-    __name = 'ventas.vendedor'
+    _name = 'ventas.vendedor' #Buena práctica se coloca nombre del módulo. nombre tabla
 
     name = fields.Char(string = "Nombre")
     apellidos = fields.Char(string = "Apellidos")
