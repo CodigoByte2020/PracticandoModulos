@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="ventas_cliente_views_tre" model="ir.ui.view">
+        <field name="name">ventas.cliente.view.tree</field>
+        <field name="model">ventas.cliente</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="direccion"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ventas_cliente_action" model="ir.actions.act_window">
+        <field name="name">Cliente</field>
+        <field name="res_model">ventas.cliente</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="cliente_menu"
+              name="Cliente"
+              action="ventas_cliente_action"
+              sequence="10"
+              parent="persona_menu"/>
+
+    <record id="ventas_cliente_view_form" model="ir.ui.view">
+        <field name="name">ventas.cliente.view.form</field>
+        <field name="model">ventas.cliente</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" placeholder="Ingrese su nombre"/>
+                        </group>
+                        <group>
+                            <field name="apellidos" placeholder="Ingrese su apellido"/>
+                        </group>
+                        <group>
+                            <field name="edad" placeholder="Ingrese su edad"/>
+                        </group>
+                        <group>
+                            <field name="celular" placeholder="Ingrese su edad"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record >
+</odoo>

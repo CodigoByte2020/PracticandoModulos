@@ -1,5 +1,6 @@
 from odoo import fields, models
 
+
 class Vendedor(models.Model):
 
     _name = 'ventas.vendedor' #Buena práctica se coloca nombre del módulo. nombre tabla
