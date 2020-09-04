@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="ventas_menu_root"
+              name="Ventas en general"
+              sequence="50"/>
+        <menuitem id="persona_menu"
+                  name="Persona"
+                  sequence="20"
+                  parent="ventas_menu_root"/>
+</odoo>

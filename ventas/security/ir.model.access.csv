@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ventas_producto,access_ventas_producto,model_ventas_producto,base.group_user,1,1,1,1
+access_ventas_vendedor,access_ventas_vendedor,model_ventas_vendedor,base.group_user,1,1,1,1
+access_ventas_comprobante_pagoventa,access_ventas_comprobante_pagoventa,model_ventas_comprobante_pagoventa,base.group_user,1,1,1,1

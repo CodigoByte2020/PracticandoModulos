@@ -7,6 +7,11 @@
     'website': 'https://codigobyte2020.github.io/GMax/',
     'depends': ['base'],
     'data': [
+            #vistas
+            'views/ventas_menus.xml',
+            'views/vendedor_views.xml',
+            #Archivo de reglas de acceso
+            'security/ir.model.access.csv',
     ],
     'installable': True,
 }
