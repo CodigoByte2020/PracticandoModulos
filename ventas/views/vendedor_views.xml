@@ -3,15 +3,14 @@
 
     <!-- Vista de tipo lista -->
     <record id="ventas_vendedor_view_tree" model="ir.ui.view"> <!--registro en una tabla-->
-        <field name="name">ventas.vendedor.view.tree</field>
-        <field name="model">ventas.vendedor</field>
+        <field name="name">ventas.vendedor.view.tree</field> <!--?     -->
+        <field name="model">ventas.vendedor</field> <!--?     -->
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
                 <field name="direccion"/>
             </tree>
         </field>
-
     </record >
 
     <record id="ventas_vendedor_action" model="ir.actions.act_window">
@@ -33,7 +32,7 @@
         <field name="model">ventas.vendedor</field>
         <field name="arch" type="xml">
             <form>
-                <sheet> <!-- Para ubicarlo dentro de un campo -->
+                <sheet> <!-- Para ubicarlo dentro de un cuadro -->
                     <group>
                         <group>
                             <field name="name" placeholder="NOMBRE"/>
@@ -45,7 +44,6 @@
                 </sheet>
             </form>
         </field>
-
     </record >
 
 </odoo>

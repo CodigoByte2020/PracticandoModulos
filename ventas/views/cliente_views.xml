@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <odoo>
-    <record id="ventas_cliente_views_tre" model="ir.ui.view">
+    <record id="ventas_cliente_views_tree" model="ir.ui.view">
         <field name="name">ventas.cliente.view.tree</field>
         <field name="model">ventas.cliente</field>
         <field name="arch" type="xml">
@@ -21,7 +21,7 @@
     <menuitem id="cliente_menu"
               name="Cliente"
               action="ventas_cliente_action"
-              sequence="10"
+              sequence="20"
               parent="persona_menu"/>
 
     <record id="ventas_cliente_view_form" model="ir.ui.view">
