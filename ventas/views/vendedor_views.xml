@@ -20,6 +20,7 @@
         <!--<field name="view_id" ref="ventas_vendedor_view_tree"/>-->
     </record>
 
+    <!-- Este atributo name sobreescribe al name de record -->
     <menuitem id="vendedor_menu"
               name="Vendedor"
               action="ventas_vendedor_action"

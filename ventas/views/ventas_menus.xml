@@ -3,6 +3,11 @@
     <menuitem id="ventas_menu_root"
               name="Ventas en general"
               sequence="50"/>
+        <menuitem id="ventas_menu"
+                  name="Ventas"
+                  sequence="10"
+                  parent="ventas_menu_root"/>
+
         <menuitem id="persona_menu"
                   name="Persona"
                   sequence="20"

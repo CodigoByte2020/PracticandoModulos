@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="ventas_venta_view_tree" model="ir.ui.view">
+        <field name="name">ventas.venta.view.tree</field>
+        <field name="model">ventas.comprobante.pagoventa</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="cliente_id"/>
+                <field name="vendedor_id"/>
+                <field name="tipo"/>
+                <field name="fecha_emision"/>
+                <field name="fecha_vencimiento"/>
+                <field name="terminos_pago"/>
+                <field name="moneda"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="ventas_venta_view_form" model="ir.ui.view">
+        <field name="name">ventas.venta.view.form</field>
+        <field name="model">ventas.comprobante.pagoventa</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group> <!-- no_create, no_create_edit, no_open, opciones de campos Many2one-->
+                            <field name="cliente_id" options="{'no_create':1}"/>
+                            <field name="vendedor_id"/>
+                            <field name="tipo"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="fecha_emision"/>
+                            <field name="fecha_vencimiento"/>
+                            <field name="terminos_pago"/>
+                            <field name="moneda"/>
+                        </group>
+                    </group>
+                    <label for="lineas_ids"/>
+                    <field name="lineas_ids" context="{'default_venta_id': id}">
+                        <tree>
+                            <field name="venta_id" invisible="True"/>
+                            <field name="producto_id"/>
+                            <field name="cantidad"/>
+                            <field name="precio"/>
+                            <field name="precio_total"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group>
+                                        <field name="venta_id"/>
+                                        <field name="producto_id"/>
+                                        <field name="cantidad"/>
+                                    </group>
+                                    <group>
+                                        <field name="precio"/>
+                                        <field name="precio_total"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+
+    </record>
+
+    <record id="ventas_venta_action" model="ir.actions.act_window">
+        <field name="name">ComprobantePagoVenta</field>
+        <field name="res_model">ventas.comprobante.pagoventa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="subventas_menu"
+              name="Venta"
+              action="ventas_venta_action"
+              sequence="40"
+              parent="ventas_menu"/>
+
+</odoo>

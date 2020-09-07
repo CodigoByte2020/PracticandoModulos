@@ -7,6 +7,7 @@ class Cliente(models.Model):
 
     name = fields.Char(string="Nombre", required=True)
     apellidos = fields.Char(string="Apellidos")
+    direccion = fields.Char(string="Dirección")
     edad = fields.Integer(string="Edad")
     celular = fields.Integer(string="Celular",help="Ingrese un número de 9 digitos")
 

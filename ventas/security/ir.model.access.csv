@@ -4,3 +4,5 @@ access_ventas_vendedor,access_ventas_vendedor,model_ventas_vendedor,base.group_u
 access_ventas_comprobante_pagoventa,access_ventas_comprobante_pagoventa,model_ventas_comprobante_pagoventa,base.group_user,1,1,1,1
 access_ventas_cliente,access_ventas_cliente,model_ventas_cliente,base.group_user,1,1,1,1
 access_ventas_producto,access_ventas_producto,model_ventas_producto,base.group_user,1,1,1,1
+access_ventas_venta_producto,access_ventas_venta_producto,model_ventas_venta_producto,base.group_user,1,1,1,1
+

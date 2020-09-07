@@ -8,3 +8,5 @@ class Producto(models.Model):
     categoria = fields.Char(string="Categoria")
     precio = fields.Float(string="Precio")
     stock = fields.Integer(string="Stock")
+
+    lineas_ids = fields.One2many('ventas.venta_producto','producto_id', string='Producto') #???

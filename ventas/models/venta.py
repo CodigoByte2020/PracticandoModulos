@@ -6,6 +6,14 @@ class ComprobantePagoVenta(models.Model):
     _description = 'Comprobantes de pago de venta'
 
     name = fields.Char(string='Serie Comprobante')
-    fecha_emision =  fields.Date(String='Fecha de emisión')
-    fecha_vencimiento = fields.Date(string='Fecha de vencimiento')
-    vendedor_id = fields.Many2one('ventas.vendedor',string='Vendedor')
+    tipo = fields.Selection([('boleta', 'Boleta'), ('factura','Factura')], string='Tipo')
+    fecha_emision = fields.Date(string='Fecha de emisión')
+    fecha_vencimiento = fields.Date(string ='Fecha de vencimiento')
+    terminos_pago = fields.Selection([('contado', 'Al contado'), ('plazo', '15 días plazo')],
+        string='términos pago')
+    moneda = fields.Selection([('pen', 'Soles'), ('usd', 'Dólares'), ('eur', 'Euros')], string='Tipo de moneda')
+    vendedor_id = fields.Many2one('ventas.vendedor', string='Vendedor')
+    cliente_id = fields.Many2one('ventas.cliente', string='Cliente')
+
+    lineas_ids = fields.One2many('ventas.venta_producto','venta_id', string='Venta') #???
+    #Hacer un foreach para calcular el total las líneas

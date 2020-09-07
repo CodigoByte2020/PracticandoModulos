@@ -21,7 +21,6 @@
     </record>
 
     <menuitem id="producto_menu"
-              name="Vendedor"
               action="ventas_producto_action"
               sequence="30"
               parent="persona_menu"/>
