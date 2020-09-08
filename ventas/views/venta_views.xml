@@ -60,6 +60,10 @@
                                         <field name="precio_total"/>
                                     </group>
                                 </group>
+                                <div class="left">
+                                    <label for="total"></label>
+                                    <field name="total"></field>
+                                </div>
                             </sheet>
                         </form>
                     </field>

@@ -38,3 +38,5 @@ class Venta_Producto(models.Model):
     #El dependes no persiste en BD y el onchanged si
     #El depends hace no editable el campo
     #Ambos se ejecutan cuando cambia al menos un valor de sus parámetros
+
+    #Todos los cambios compute cambian su valor constantemente
