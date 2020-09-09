@@ -6,6 +6,9 @@ TERMINO_PAGO_SELECTION = [
     ('contado', 'Al contado'),
 ]
 
+STATE_SELECTION = [
+    ('mal', 'error')
+]
 
 class ComprobantePagoVenta(models.Model):
     _name = 'ventas.comprobante.pagoventa'
@@ -20,7 +23,8 @@ class ComprobantePagoVenta(models.Model):
     moneda = fields.Selection([('pen', 'Soles'), ('usd', 'Dólares'), ('eur', 'Euros')], string='Tipo de moneda')
     vendedor_id = fields.Many2one('ventas.vendedor', string='Vendedor')
     cliente_id = fields.Many2one('ventas.cliente', string='Cliente')
-    state = fields.Selection(STATE.SELECTION)
+    state = fields.Selection(STATE_SELECTION,string="Estado")
+    total = fields.Float(string='Total')
 
     fecha_actual = time.strftime("%d%m%y") #timestamp, tiemlinex
 
@@ -34,15 +38,16 @@ class ComprobantePagoVenta(models.Model):
     def dias_entre(d1, d2):
         d1 = datetime.strptime(d1, "%Y-%m-%d")
         d2 = datetime.strptime(d2, "%Y-%m-%d")
-        return cantidad_dias((d2 - d1).days)
+        #return cantidad_dias((d2 - d1).days)
 
-    lineas_ids = fields.One2many('ventas.venta_producto','venta_id', string='Venta') #???
+    #Este campo es mi acceso al model venta_producto'''
+    lineas_ids = fields.One2many('ventas.venta_producto','venta_id', string='Venta')
     #Hacer un foreach para calcular el total las líneas
 
-    @api.depends('line_ids')
-    def _compute_precio_total(self):
-        suma_total = 0
-        for line in self.lineas_ids:
-            suma_total += lineas_ids.precio_total
+    # @api.depends('line_ids')
+    # def _compute_precio_total(self):
+    #     suma_total = 0
+    #     for line in self.lineas_ids:
+    #         suma_total += lineas_ids.precio_total
 
 

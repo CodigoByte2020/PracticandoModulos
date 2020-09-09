@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <odoo>
     <record id="ventas_venta_view_tree" model="ir.ui.view">
         <field name="name">ventas.venta.view.tree</field>
@@ -21,6 +20,7 @@
     <record id="ventas_venta_view_form" model="ir.ui.view">
         <field name="name">ventas.venta.view.form</field>
         <field name="model">ventas.comprobante.pagoventa</field>
+        <!--indica el modelo-->
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -39,7 +39,7 @@
                         </group>
                     </group>
                     <label for="lineas_ids"/>
-                    <field name="lineas_ids" context="{'default_venta_id': id}">
+                    <field name="lineas_ids" context="{'default_venta_id': id}">#Accedemosl otro modelo
                         <tree>
                             <field name="venta_id" invisible="True"/>
                             <field name="producto_id"/>
@@ -60,17 +60,16 @@
                                         <field name="precio_total"/>
                                     </group>
                                 </group>
-                                <div class="left">
-                                    <label for="total"></label>
-                                    <field name="total"></field>
-                                </div>
                             </sheet>
                         </form>
                     </field>
+                    <div class="text-right">
+                        <label for="total"></label>
+                        <field name="total"></field>
+                    </div>
                 </sheet>
             </form>
         </field>
-
     </record>
 
     <record id="ventas_venta_action" model="ir.actions.act_window">
@@ -84,5 +83,4 @@
               action="ventas_venta_action"
               sequence="40"
               parent="ventas_menu"/>
-
 </odoo>
